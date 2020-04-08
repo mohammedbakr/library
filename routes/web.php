@@ -15,4 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/books', 'BookController');
+// Book routes
+Route::post('/books', 'BookController@store');
+Route::patch('/books/{book}-{slug}', 'BookController@update');
+Route::delete('/books/{book}-{slug}', 'BookController@destroy');
+
+// Author routes
+Route::post('/author', 'AuthorController@store');
+Route::patch('/author/{author}', 'AuthorController@update');
+Route::delete('/author/{author}', 'AuthorController@destroy');
+
+// Route::resource('/books', 'BookController');

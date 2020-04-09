@@ -35,7 +35,9 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        Author::create($this->validateRequest());
+        Author::create(request()->only([
+            'name', 'dob',
+        ]));
     }
 
     /**
@@ -87,7 +89,6 @@ class AuthorController extends Controller
     {
         return request()->validate([
             'name' => 'required',
-            'dob' => 'required',
         ]);
     }
 }

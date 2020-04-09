@@ -17,6 +17,7 @@ Route::patch('/books/{book}-{slug}', 'BookController@update');
 Route::delete('/books/{book}-{slug}', 'BookController@destroy');
 
 // Author routes
+Route::get('/authors/create', 'AuthorController@create');
 Route::post('/authors', 'AuthorController@store');
 // Route::patch('/author/{author}', 'AuthorController@update');
 // Route::delete('/author/{author}', 'AuthorController@destroy');
